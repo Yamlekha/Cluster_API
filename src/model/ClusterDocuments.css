@@ -1,30 +1,84 @@
+html, body {
+    margin: 0; /* Remove default margin */
+    height: 100%; /* Full height for body */
+}
+.flex-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items */
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Space between form and output */
+    flex: 1; /* Allow flex container to grow and fill space */
+}
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
     justify-content: flex-start; /* Align items to the top */
     height: 100vh; /* Full height of the viewport */
     text-align: center; /* Center text */
-    padding-top: 20px; /* Add some padding from the top, if needed */
+    padding: 20px; /* Padding from the edges */
+    box-sizing: border-box; /* Include padding in height calculations */
 }
 
 form {
     margin-bottom: 20px; /* Space between form and output */
+    width: 100%; /* Use full width */
+    max-width: 400px; /* Set a maximum width for the form */
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space below the heading */
 }
 
 h2 {
-    margin-top: 20px;
+    margin-top: 20px; /* Space above the subheading */
 }
 
 h3 {
-    margin: 10px 0;
+    margin: 10px 0; /* Space around cluster headings */
 }
 
 button {
-    padding: 10px 20px; /* Add some padding for the button */
+    padding: 10px 20px; /* Add padding for the button */
     cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Flex container for clusters and word clouds */
+.flex-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items */
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Space between form and output */
+    flex: 1; /* Allow flex container to grow and fill space */
+}
+
+/* Style for clusters and word clouds */
+.clusters, .word-clouds {
+    width: 30%; /* Adjust width as needed */
+    flex: 1; /* Allow these to grow and fill available space */
+}
+
+/* Style for cluster containers */
+.cluster-container {
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 15px; /* Smoothly curved edges */
+    padding: 15px; /* Padding inside the box */
+    margin: 10px 0; /* Space between clusters */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style for word cloud containers */
+.word-cloud-container {
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 15px; /* Smoothly curved edges */
+    padding: 15px; /* Padding inside the box */
+    margin: 10px 0; /* Space between word clouds */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.word-cloud-image {
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
 }
