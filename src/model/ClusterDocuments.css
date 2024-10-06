@@ -1,84 +1,136 @@
 html, body {
-    margin: 0; /* Remove default margin */
-    height: 100%; /* Full height for body */
+    margin: 0; 
+    height: 100%; 
+    background-color: #d0f0c0; 
+    font-family: Arial, sans-serif; 
 }
-.flex-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space out items */
-    width: 100%; /* Full width */
-    margin-top: 20px; /* Space between form and output */
-    flex: 1; /* Allow flex container to grow and fill space */
-}
+
 .container {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: flex-start; /* Align items to the top */
-    height: 100vh; /* Full height of the viewport */
-    text-align: center; /* Center text */
-    padding: 20px; /* Padding from the edges */
-    box-sizing: border-box; /* Include padding in height calculations */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+    height: 100vh; 
+    text-align: center; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    background-color: #d0f0c0; 
 }
 
 form {
-    margin-bottom: 20px; /* Space between form and output */
-    width: 100%; /* Use full width */
-    max-width: 400px; /* Set a maximum width for the form */
+    margin-bottom: 20px;
+    width: 100%; 
+    max-width: 400px;
 }
 
 h1 {
-    margin-bottom: 20px; /* Space below the heading */
+    margin-bottom: 20px; 
+    color: #333; 
 }
 
 h2 {
-    margin-top: 20px; /* Space above the subheading */
+    margin-top: 20px; 
+    color: #333;
 }
 
 h3 {
-    margin: 10px 0; /* Space around cluster headings */
+    margin: 10px 0;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="number"], input[type="file"] {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 20px;
+    border: 2px solid #ccc; 
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+input[type="number"]:focus, input[type="file"]:focus {
+    outline: none;
+    border-color: #7abaff; 
+}
+
+.container button {
+    padding: 15px 20px; 
+    width: 100%; 
+    background-color: #6bb46b; 
+    color: black; 
+    border: none; 
+    border-radius: 10px; 
+    font-size: 18px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.container button:hover {
+    background-color: #1c811f; 
+    color: white; 
 }
 
 button {
-    padding: 10px 20px; /* Add padding for the button */
-    cursor: pointer; /* Change cursor to pointer */
+    padding: 15px 20px; 
+    width: 45%; 
+    background-color: #8fbc8f; 
+    color: black; 
+    border: none; 
+    border-radius: 10px; 
+    font-size: 18px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-/* Flex container for clusters and word clouds */
+button:hover {
+    background-color: #4caf50; 
+    color: white; 
+}
+
+
+
+button:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+
 .flex-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space out items */
-    width: 100%; /* Full width */
-    margin-top: 20px; /* Space between form and output */
-    flex: 1; /* Allow flex container to grow and fill space */
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%; 
+    margin-top: 20px; 
+    flex: 1; 
 }
 
-/* Style for clusters and word clouds */
 .clusters, .word-clouds {
-    width: 30%; /* Adjust width as needed */
-    flex: 1; /* Allow these to grow and fill available space */
+    width: 30%; 
+    flex: 1; 
 }
 
-/* Style for cluster containers */
-.cluster-container {
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 15px; /* Smoothly curved edges */
-    padding: 15px; /* Padding inside the box */
-    margin: 10px 0; /* Space between clusters */
-    background-color: #f9f9f9; /* Light background color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Style for word cloud containers */
-.word-cloud-container {
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 15px; /* Smoothly curved edges */
-    padding: 15px; /* Padding inside the box */
-    margin: 10px 0; /* Space between word clouds */
-    background-color: #f9f9f9; /* Light background color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+.cluster-container, .word-cloud-container {
+    border: 1px solid #ccc; 
+    border-radius: 15px; 
+    padding: 15px; 
+    margin: 10px 0; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .word-cloud-image {
-    max-width: 100%; /* Ensure image doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; 
+    height: auto; 
 }

@@ -3,11 +3,11 @@ import axios from "axios";
 import "./ClusterDocuments.css";
 
 const ClusterDocuments = () => {
-  const [nClusters, setNClusters] = useState(5); // Default cluster value
-  const [file, setFile] = useState(null); // PDF file state
-  const [clusters, setClusters] = useState([]); // Store clusters from API
-  const [wordClouds, setWordClouds] = useState({}); // Store word clouds from API
-  const [loading, setLoading] = useState(false); // Loading state for the button
+  const [nClusters, setNClusters] = useState(5); 
+  const [file, setFile] = useState(null); 
+  const [clusters, setClusters] = useState([]); 
+  const [wordClouds, setWordClouds] = useState({}); 
+  const [loading, setLoading] = useState(false); 
 
   // Handle file input
   const handleFileChange = (e) => {
@@ -19,28 +19,28 @@ const ClusterDocuments = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("files", file); // Add PDF file
+    formData.append("files", file); 
 
-    setLoading(true); // Set loading state to true
+    setLoading(true); 
     try {
-      // Dynamically append n_clusters to the URL
+      
       const response = await axios.post(
         `https://cluster-poc-4ba2ee28df2f.herokuapp.com/cluster-documents/?n_clusters=${nClusters}`, 
         formData
       );
 
-      setClusters(response.data.clusters); // Set clusters in state
-      setWordClouds(response.data.wordclouds); // Set word clouds in state
+      setClusters(response.data.clusters); 
+      setWordClouds(response.data.wordclouds); 
     } catch (error) {
       console.error("Error uploading file", error);
     } finally {
-      setLoading(false); // Reset loading state to false
+      setLoading(false); 
     }
   };
 
   return (
     <div className="container">
-      <div className="form-container"> {/* New div for the heading and form */}
+      <div className="form-container"> 
         <h1>Smart Resume Analyzer</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="nClusters">Number of Clusters :</label>
@@ -60,15 +60,15 @@ const ClusterDocuments = () => {
             onChange={handleFileChange}
           />
           <br />
-          <button type="submit" disabled={loading}> {/* Disable button while loading */}
-            {loading ? 'Loading...' : 'Submit'} {/* Show loading or submit */}
+          <button type="submit" disabled={loading}> 
+            {loading ? 'Loading...' : 'Submit'} 
           </button>
         </form>
       </div>
 
-      {/* Separate div for clusters and word clouds */}
+      
       <div className="flex-container">
-        {/* Display Clusters */}
+        
         {clusters.length > 0 && (
           <div className="clusters">
             <h2>Clusters</h2>
@@ -85,7 +85,7 @@ const ClusterDocuments = () => {
           </div>
         )}
 
-        {/* Display Word Clouds */}
+       
         {Object.keys(wordClouds).length > 0 && (
           <div className="word-clouds">
             <h2>Word Clouds</h2>
